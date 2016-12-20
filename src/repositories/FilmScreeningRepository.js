@@ -2,5 +2,5 @@
 
 import BaseRepository from './BaseRepository';
 
-export default class extends BaseRepository {
+export default class FilmScreeningRepository extends BaseRepository {
 }

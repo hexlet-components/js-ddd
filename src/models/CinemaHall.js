@@ -2,7 +2,7 @@
 
 import uuid from 'uuid-js';
 
-export default class {
+export default class CinemaHall {
   static constraints = {
     name: {
       presence: true,

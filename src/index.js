@@ -4,6 +4,7 @@ import Bottle from 'bottlejs';
 import services from './services';
 import models from './models';
 import repositories from './repositories';
+import makeValidator from './lib/validator';
 
 export default () => {
   const bottle = new Bottle();
@@ -20,6 +21,8 @@ export default () => {
       ({ ...acc, [serviceName]: new services[serviceName](container) }), {});
     return result;
   });
+
+  bottle.factory('validate', container => makeValidator(container));
 
   return bottle.container;
 };

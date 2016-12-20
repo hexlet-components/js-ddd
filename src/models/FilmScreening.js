@@ -1,6 +1,8 @@
 // @flow
 
-export default class {
+import uuid from 'uuid-js';
+
+export default class FilmScreening {
   static constraints = {
     film: {
       presence: true,
@@ -14,8 +16,13 @@ export default class {
   };
 
   constructor(film, cinemaHall, time) {
+    this.id = uuid.create().hex;
     this.film = film;
-    this.cinmeaHall = cinemaHall;
+    this.cinemaHall = cinemaHall;
     this.time = time;
+  }
+
+  valueOf() {
+    return this.id;
   }
 }

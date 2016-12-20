@@ -2,14 +2,16 @@
 
 import uuid from 'uuid-js';
 
-export default class Ticket {
+export default class FilmScreeningTicket {
   static constraints = {
     fileScreening: {
       presence: true,
+      uniqueness: {
+        scope: ['row', 'col'],
+      },
     },
     user: {
       presence: true,
-      numericality: true,
     },
     place: {
       presence: true,

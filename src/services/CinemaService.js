@@ -1,12 +1,11 @@
 // @flow
 
 import BaseService from './BaseService';
-import validate from '../lib/validator';
 
 export default class CinemaService extends BaseService {
   createCinemaHall(name, rows, cols) {
     const cinemaHall = new this.models.CinemaHall(name, rows, cols);
-    const errors = validate(cinemaHall);
+    const errors = this.validate(cinemaHall);
     if (!errors) {
       this.repositories.CinemaHall.save(cinemaHall);
     }
@@ -15,9 +14,9 @@ export default class CinemaService extends BaseService {
 
   createFilm(name, duration) {
     const film = new this.models.Film(name, duration);
-    const errors = validate(film);
+    const errors = this.validate(film);
     if (!errors) {
-      this.repositories.FilmScreening.save(film);
+      this.repositories.Film.save(film);
     }
     return [film, errors];
   }
@@ -26,7 +25,7 @@ export default class CinemaService extends BaseService {
     const film = this.repositories.Film.find(filmId);
     const hall = this.repositories.CinemaHall.find(cinemaHallId);
     const filmScreening = new this.models.FilmScreening(film, hall, time);
-    const errors = validate(filmScreening);
+    const errors = this.validate(filmScreening);
     if (!errors) {
       this.repositories.FilmScreening.save(filmScreening);
     }

@@ -26,7 +26,8 @@
     "bottlejs": "*",
     "gulp": "*",
     "uuid-js": "*",
-    "validate.js": "*"
+    "validate.js": "*",
+    "lodash": "*"
   },
   "devDependencies": {
     "babel-cli": "*",
