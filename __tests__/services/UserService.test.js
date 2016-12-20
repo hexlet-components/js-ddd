@@ -46,7 +46,7 @@ describe('UserService', () => {
     const [, errors] = services.UserService.buyTicket(user.id, filmScreening.id, place);
     const expected = {
       fileScreening: [
-        'File screening ticket already exists',
+        'File screening already exists',
       ],
     };
 

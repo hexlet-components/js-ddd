@@ -7,7 +7,7 @@ export default class FilmScreeningTicket {
     fileScreening: {
       presence: true,
       uniqueness: {
-        scope: ['row', 'col'],
+        scope: ['place'],
       },
     },
     user: {

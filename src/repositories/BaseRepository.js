@@ -5,12 +5,16 @@ import _ from 'lodash';
 export default class {
   data = [];
 
+  all() {
+    return this.data;
+  }
+
   find(id) {
     return this.data.find(entity => entity.id === id);
   }
 
   findAllBy(params) {
-    return _.matches(this.data, params);
+    return _.filter(this.data, params);
   }
 
   findBy(params) {
