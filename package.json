@@ -25,9 +25,9 @@
   "dependencies": {
     "bottlejs": "*",
     "gulp": "*",
+    "lodash": "*",
     "uuid-js": "*",
-    "validate.js": "*",
-    "lodash": "*"
+    "validate.js": "*"
   },
   "devDependencies": {
     "babel-cli": "*",
@@ -41,8 +41,8 @@
     "eslint": "*",
     "eslint-config-airbnb": "*",
     "eslint-plugin-flowtype": "*",
-    "eslint-plugin-import": "^1.8.0",
-    "flow-bin": "^0.34",
+    "eslint-plugin-import": "*",
+    "flow-bin": "*",
     "flow-typed": "*",
     "jest": "*"
   }
