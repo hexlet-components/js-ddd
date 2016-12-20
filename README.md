@@ -1,8 +1,8 @@
-# javascript-package
+# js-ddd
 
-[![Code Climate](https://codeclimate.com/github/hexlet-boilerplates/javascript-package/badges/gpa.svg)](https://codeclimate.com/github/hexlet-boilerplates/javascript-package)
-[![Issue Count](https://codeclimate.com/github/hexlet-boilerplates/javascript-package/badges/issue_count.svg)](https://codeclimate.com/github/hexlet-boilerplates/javascript-package)
-[![Build Status](https://travis-ci.org/hexlet-boilerplates/javascript-package.svg?branch=master)](https://travis-ci.org/hexlet-boilerplates/javascript-package)
+[![Code Climate](https://codeclimate.com/github/hexlet-components/js-ddd/badges/gpa.svg)](https://codeclimate.com/github/hexlet-components/js-ddd)
+[![Issue Count](https://codeclimate.com/github/hexlet-components/js-ddd/badges/issue_count.svg)](https://codeclimate.com/github/hexlet-components/js-ddd)
+[![Build Status](https://travis-ci.org/hexlet-components/js-ddd.svg?branch=master)](https://travis-ci.org/hexlet-components/js-ddd)
 
 ## Setup
 
