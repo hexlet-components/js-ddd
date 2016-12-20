@@ -1,9 +1,9 @@
 // @flow
 
 export default class {
-  constructor(container) {
-    this.repositories = container.repositories;
-    this.models = container.models;
-    this.validate = container.validate;
+  constructor({ repositories, models, validate }) {
+    this.repositories = repositories;
+    this.models = models;
+    this.validate = validate;
   }
 }

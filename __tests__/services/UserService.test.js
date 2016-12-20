@@ -16,7 +16,8 @@ describe('UserService', () => {
     [user] = services.UserService.create(email);
     [film] = services.CinemaService.createFilm('first glance', 100);
     [cinemaHall] = services.CinemaService.createCinemaHall('first', 5, 5);
-    [filmScreening] = services.CinemaService.createFilmScreening(film.id, cinemaHall.id, new Date());
+    [filmScreening] = services.CinemaService
+      .createFilmScreening(film.id, cinemaHall.id, new Date());
   });
 
   it('buyTicket', () => {
