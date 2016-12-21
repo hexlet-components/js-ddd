@@ -3,7 +3,7 @@
 import _ from 'lodash';
 import validate from 'validate.js';
 
-export default container => {
+export default (container) => {
   validate.validators.uniqueness = (value, options, key, attributes) => {
     if (!value) {
       return null;

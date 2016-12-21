@@ -16,7 +16,7 @@ export default () => {
 
   bottle.service('models', () => models);
 
-  bottle.factory('services', container => {
+  bottle.factory('services', (container) => {
     const result = Object.keys(services).reduce((acc, serviceName) =>
       ({ ...acc, [serviceName]: new services[serviceName](container) }), {});
     return result;
