@@ -3,21 +3,33 @@
 import _ from 'lodash';
 import validate from 'validate.js';
 
-export default (container) => {
+import BaseEntity from './BaseEntity';
+
+export default ({ repositories }) => {
+  const entityValidator = entity => validate(entity, entity.constructor.constraints);
   validate.validators.uniqueness = (value, options, key, attributes) => {
     if (!value) {
       return null;
     }
     const className = attributes.constructor.name;
-    const repository = container.repositories[className];
-    const scope = options.scope || {};
-    const params = { [key]: value, ..._.pick(attributes, scope) };
+    const repository = repositories[className];
+    const scope = options.scope || [];
+    const conditions = options.conditions || {};
+    const params = { [key]: value, ...conditions, ..._.pick(attributes, scope) };
     const result = repository.findBy(params);
-    if (result) {
+    const isEntity = result instanceof BaseEntity;
+    if (result || (isEntity && result.id !== value.id)) {
       return 'already exists';
     }
     return null;
   };
 
-  return entity => validate(entity, entity.constructor.constraints);
+  validate.validators.association = (value) => {
+    if (!value) {
+      return null;
+    }
+    return entityValidator(value);
+  };
+
+  return entityValidator;
 };

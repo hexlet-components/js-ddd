@@ -1,8 +1,9 @@
 // @flow
 
 import uuid from 'uuid-js';
+import ApplicationEntity from './ApplicationEntity';
 
-export default class Film {
+export default class Film extends ApplicationEntity {
   static constraints = {
     name: {
       presence: true,
@@ -16,6 +17,7 @@ export default class Film {
   };
 
   constructor(name, duration) {
+    super();
     this.id = uuid.create().hex;
     this.name = name;
     this.duration = duration;

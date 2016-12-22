@@ -1,6 +1,6 @@
 // @flow
 
-import BaseRepository from './BaseRepository';
+import ApplicationRepository from './ApplicationRepository';
 
-export default class FilmScreeningRepository extends BaseRepository {
+export default class FilmScreeningRepository extends ApplicationRepository {
 }

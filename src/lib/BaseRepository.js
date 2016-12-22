@@ -10,7 +10,11 @@ export default class {
   }
 
   find(id) {
-    return this.data.find(entity => entity.id === id);
+    const result = this.data.find(entity => entity.id === id);
+    if (!result) {
+      throw new Error('Entity not found');
+    }
+    return result;
   }
 
   findAllBy(params) {
@@ -26,3 +30,4 @@ export default class {
     this.data.push(entity);
   }
 }
+

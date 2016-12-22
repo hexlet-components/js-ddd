@@ -1,8 +1,8 @@
 // @flow
 
-import BaseService from './BaseService';
+import ApplicationService from './ApplicationService';
 
-export default class CinemaService extends BaseService {
+export default class extends ApplicationService {
   createCinemaHall(name, rows, cols) {
     const cinemaHall = new this.models.CinemaHall(name, rows, cols);
     const errors = this.validate(cinemaHall);

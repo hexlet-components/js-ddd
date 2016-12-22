@@ -56,19 +56,7 @@ describe('CinemaService', () => {
   });
 
   it('createFilmScreening (errors)', () => {
-    const [, errors] = service.createFilmScreening();
-
-    const expected = {
-      cinemaHall: [
-        'Cinema hall can\'t be blank',
-      ],
-      film: [
-        'Film can\'t be blank',
-      ],
-      time: [
-        'Time can\'t be blank',
-      ],
-    };
-    expect(errors).toMatchObject(expected);
+    const f = () => service.createFilmScreening();
+    expect(f).toThrow();
   });
 });

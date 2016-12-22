@@ -3,26 +3,24 @@
 import uuid from 'uuid-js';
 import ApplicationEntity from './ApplicationEntity';
 
-export default class CinemaHall extends ApplicationEntity {
+export default class Revenue extends ApplicationEntity {
   static constraints = {
-    name: {
+    ticket: {
       presence: true,
+      association: true,
     },
-    rows: {
-      presence: true,
-      numericality: true,
-    },
-    cols: {
+    cost: {
       presence: true,
       numericality: true,
     },
   };
 
-  constructor(name, rows, cols) {
+  constructor(ticket, cost) {
     super();
     this.id = uuid.create().hex;
-    this.name = name;
-    this.rows = rows;
-    this.cols = cols;
+    this.ticket = ticket;
+    this.cost = cost;
+    this.createdAt = new Date();
   }
 }
+

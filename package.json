@@ -23,11 +23,13 @@
   },
   "homepage": "https://github.com/hexlet-boilerplates/javascript-package#readme",
   "dependencies": {
+    "javascript-state-machine": "*",
     "bottlejs": "*",
     "gulp": "*",
     "lodash": "*",
     "uuid-js": "*",
-    "validate.js": "*"
+    "validate.js": "*",
+    "date-fns": "*"
   },
   "devDependencies": {
     "babel-cli": "*",
@@ -42,7 +44,7 @@
     "eslint-config-airbnb": "*",
     "eslint-plugin-flowtype": "*",
     "eslint-plugin-import": "*",
-    "flow-bin": "*",
+    "flow-bin": "^0.3",
     "flow-typed": "*",
     "jest": "*"
   }
