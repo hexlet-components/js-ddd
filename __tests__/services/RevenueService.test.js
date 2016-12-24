@@ -58,11 +58,9 @@ describe('RevenueService', () => {
     const place = { row: 5, col: 3 };
     services.RevenueService.buyTicket(user.id, filmScreening.id, place);
     const [, errors] = services.RevenueService.buyTicket(user.id, filmScreening.id, place);
-    const expected = { ticket: [{
-      fileScreening: [
-        'File screening already exists',
-      ],
-    }] };
+    const expected = { fileScreening: [
+      'File screening already exists',
+    ] };
 
     expect(errors).toMatchObject(expected);
   });

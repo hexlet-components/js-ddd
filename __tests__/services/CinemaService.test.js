@@ -10,8 +10,12 @@ describe('CinemaService', () => {
   });
 
   it('createFilm', () => {
-    const [, errors] = service.createFilm('first glance', 100);
-    expect(errors).not.toBeDefined();
+    const [film] = service.createFilm('first glance', 100);
+    const expected = {
+      name: 'first glance',
+      duration: 100,
+    };
+    expect(film).toMatchObject(expected);
   });
 
   it('createFilm (errors)', () => {

@@ -28,13 +28,18 @@ export default class extends ApplicationService {
     const price = this.repositories.Price.findBy({ cinemaHall: screening.cinemaHall });
 
     const ticket = new this.models.FilmScreeningTicket(screening, user, place);
+    const errors = this.validate(ticket);
+    if (errors) {
+      return [ticket, errors];
+    }
+
     const cost = price.calculateFor(ticket);
     const revenue = new this.models.Revenue(ticket, cost);
-    const errors = this.validate(revenue);
-    if (!errors) {
-      this.repositories.FilmScreeningTicket.save(ticket);
-      this.repositories.Revenue.save(revenue);
-    }
+    this.validate(revenue, { exception: true });
+
+    this.repositories.FilmScreeningTicket.save(ticket);
+    this.repositories.Revenue.save(revenue);
+
     return [ticket, errors];
   }
 

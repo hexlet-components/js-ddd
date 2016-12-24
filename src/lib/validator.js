@@ -6,7 +6,14 @@ import validate from 'validate.js';
 import BaseEntity from './BaseEntity';
 
 export default ({ repositories }) => {
-  const entityValidator = entity => validate(entity, entity.constructor.constraints);
+  const entityValidator = (entity, options = { exception: false }) => {
+    const errors = validate(entity, entity.constructor.constraints);
+    if (errors && options.exception) {
+      throw new Error(`${entity} is not valid (${errors})`);
+    }
+    return errors;
+  };
+
   validate.validators.uniqueness = (value, options, key, attributes) => {
     if (!value) {
       return null;

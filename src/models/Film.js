@@ -10,9 +10,6 @@ export default class Film extends ApplicationEntity {
     },
     duration: {
       presence: true,
-      // datetime: {
-      //   dateOnly: true,
-      // },
     },
   };
 
