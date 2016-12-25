@@ -9,7 +9,6 @@ describe('MoneyService', () => {
   let filmScreening;
   let user;
   let repositories;
-  let price;
 
   beforeEach(() => {
     const app = cinemaManager();
@@ -19,7 +18,7 @@ describe('MoneyService', () => {
     [user] = services.MoneyService.createTicket(email);
     [film] = services.CinemaService.createFilm('first glance', 100);
     [cinemaHall] = services.CinemaService.createCinemaHall('first', 5, 5);
-    [price] = services.MoneyService.createPrice(cinemaHall.id, 100);
+    services.MoneyService.createPrice(cinemaHall.id, 100);
     [filmScreening] = services.MoneyService
       .createFilmScreening(film.id, cinemaHall.id, new Date());
   });
@@ -35,7 +34,8 @@ describe('MoneyService', () => {
 
   it('createFilmScreening', () => {
     const time = new Date();
-    const [localFilmScreening] = services.MoneyService.createFilmScreening(film.id, cinemaHall.id, time);
+    const [localFilmScreening] = services.MoneyService
+      .createFilmScreening(film.id, cinemaHall.id, time);
 
     const expected = {
       // film,
