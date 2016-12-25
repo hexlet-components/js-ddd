@@ -45,20 +45,6 @@ describe('CinemaService', () => {
     expect(errors).toMatchObject(expected);
   });
 
-  it('createFilmScreening', () => {
-    const time = new Date();
-    const [film] = service.createFilm('first glance', 100);
-    const [cinemaHall] = service.createCinemaHall('first', 5, 5);
-    const [filmScreening] = service.createFilmScreening(film.id, cinemaHall.id, time);
-
-    const expected = {
-      // film,
-      // cinemaHall,
-      time,
-    };
-    expect(filmScreening).toMatchObject(expected);
-  });
-
   it('createFilmScreening (errors)', () => {
     const f = () => service.createFilmScreening();
     expect(f).toThrow();

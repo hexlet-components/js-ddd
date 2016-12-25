@@ -6,7 +6,7 @@ import CinemaHall from './CinemaHallRepository';
 import User from './UserRepository';
 import FilmScreeningTicket from './FilmScreening/TicketRepository';
 import Price from './PriceRepository';
-import Revenue from './RevenueRepository';
+import CapitalTransaction from './CapitalTransactionRepository';
 
 export default {
   Price,
@@ -15,5 +15,5 @@ export default {
   Film,
   CinemaHall,
   User,
-  Revenue,
+  CapitalTransaction,
 };

@@ -3,13 +3,13 @@
 import Film from './Film';
 import User from './User';
 import Price from './Price';
-import Revenue from './Revenue';
+import CapitalTransaction from './CapitalTransaction';
 import CinemaHall from './CinemaHall';
 import FilmScreening from './FilmScreening';
 import FilmScreeningTicket from './FilmScreening/Ticket';
 
 export default {
-  Revenue,
+  CapitalTransaction,
   Price,
   User,
   Film,

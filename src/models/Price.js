@@ -25,8 +25,8 @@ export default class Price extends ApplicationEntity {
     this.value = value;
   }
 
-  calculateFor({ createdAt }) {
-    return dataFns.isWeekend(createdAt) ?
+  calculateFor(time) {
+    return dataFns.isWeekend(time) ?
       this.value * this.constructor.weekendMultiplier : this.value;
   }
 }

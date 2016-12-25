@@ -20,15 +20,4 @@ export default class extends ApplicationService {
     }
     return [film, errors];
   }
-
-  createFilmScreening(filmId, cinemaHallId, time) {
-    const film = this.repositories.Film.find(filmId);
-    const hall = this.repositories.CinemaHall.find(cinemaHallId);
-    const filmScreening = new this.models.FilmScreening(film, hall, time);
-    const errors = this.validate(filmScreening);
-    if (!errors) {
-      this.repositories.FilmScreening.save(filmScreening);
-    }
-    return [filmScreening, errors];
-  }
 }

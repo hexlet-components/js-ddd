@@ -22,10 +22,23 @@ export default class extends ApplicationService {
     return [price, errors];
   }
 
+  createFilmScreening(filmId, cinemaHallId, time) {
+    const film = this.repositories.Film.find(filmId);
+    const cinemaHall = this.repositories.CinemaHall.find(cinemaHallId);
+    const price = this.repositories.Price.findBy({ cinemaHall });
+    const cost = price.calculateFor(time);
+    const screening = new this.models.FilmScreening(film, cinemaHall, time, cost);
+
+    const errors = this.validate(screening);
+    if (!errors) {
+      this.repositories.FilmScreening.save(screening);
+    }
+    return [screening, errors];
+  }
+
   buyTicket(userId, filmScreeningId, place) {
     const user = this.repositories.User.find(userId);
     const screening = this.repositories.FilmScreening.find(filmScreeningId);
-    const price = this.repositories.Price.findBy({ cinemaHall: screening.cinemaHall });
 
     const ticket = new this.models.FilmScreeningTicket(screening, user, place);
     const errors = this.validate(ticket);
@@ -33,12 +46,11 @@ export default class extends ApplicationService {
       return [ticket, errors];
     }
 
-    const cost = price.calculateFor(ticket);
-    const revenue = new this.models.Revenue(ticket, cost);
-    this.validate(revenue, { exception: true });
+    const capitalTransaction = new this.models.CapitalTransaction(ticket, 'income');
+    this.validate(capitalTransaction, { exception: true });
 
     this.repositories.FilmScreeningTicket.save(ticket);
-    this.repositories.Revenue.save(revenue);
+    this.repositories.CapitalTransaction.save(capitalTransaction);
 
     return [ticket, errors];
   }
@@ -48,14 +60,9 @@ export default class extends ApplicationService {
     if (ticket.fsm.is('returned')) {
       return false;
     }
-    ticket.fsm.refund();
-    const revenue1 = this.repositories.Revenue.findBy({ ticket });
-    const revenue2 = new this.models.Revenue(ticket, -revenue1.cost);
-    const errors = this.validate(revenue2);
-    if (errors) {
-      // throw error
-    }
-
-    return this.repositories.Revenue.save(revenue2);
+    const capitalTransaction = new this.models.CapitalTransaction(ticket, 'loss');
+    this.validate(capitalTransaction, { exception: true });
+    this.repositories.CapitalTransaction.save(capitalTransaction);
+    return ticket.fsm.refund();
   }
 }

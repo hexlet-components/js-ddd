@@ -1,9 +1,9 @@
 // @flow
 
-import RevenueService from './RevenueService';
+import MoneyService from './MoneyService';
 import CinemaService from './CinemaService';
 
 export default {
-  RevenueService,
+  MoneyService,
   CinemaService,
 };

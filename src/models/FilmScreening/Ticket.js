@@ -25,12 +25,19 @@ export default class FilmScreeningTicket extends ApplicationEntity {
     place: {
       presence: true,
     },
+    cost: {
+      presence: true,
+      numericality: {
+        greatThan: 0,
+      },
+    },
   };
 
   constructor(fileScreening, user, place) {
     super();
     this.id = uuid.create().hex;
     this.fileScreening = fileScreening;
+    this.cost = fileScreening.cost;
     this.user = user;
     this.place = place;
     this.createdAt = new Date();
