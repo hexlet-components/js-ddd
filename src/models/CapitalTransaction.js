@@ -3,7 +3,7 @@
 import uuid from 'uuid-js';
 import ApplicationEntity from './ApplicationEntity';
 
-export default class Money extends ApplicationEntity {
+export default class CapitalTransaction extends ApplicationEntity {
   static types = ['income', 'loss'];
 
   static constraints = {
@@ -16,7 +16,7 @@ export default class Money extends ApplicationEntity {
     },
     type: {
       presence: true,
-      inclusion: Money.types,
+      inclusion: CapitalTransaction.types,
     },
   };
 
