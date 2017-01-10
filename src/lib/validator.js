@@ -9,7 +9,9 @@ export default ({ repositories }) => {
   const entityValidator = (entity, options = { exception: false }) => {
     const errors = validate(entity, entity.constructor.constraints);
     if (errors && options.exception) {
-      throw new Error(`${entity} is not valid (${errors})`);
+      const err = new Error(`${entity.constructor.name} is not valid.
+        Errors: (${JSON.stringify(errors)})`);
+      err.errors = errors;
     }
     return errors;
   };
