@@ -28,8 +28,4 @@ export default class FilmScreening extends ApplicationEntity {
     this.cinemaHall = cinemaHall;
     this.time = time;
   }
-
-  valueOf() {
-    return this.id;
-  }
 }
