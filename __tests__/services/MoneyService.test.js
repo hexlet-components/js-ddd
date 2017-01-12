@@ -15,7 +15,7 @@ describe('MoneyService', () => {
     services = app.services;
     repositories = app.repositories;
     const email = 'etst@email.com';
-    [user] = services.MoneyService.createTicket(email);
+    [user] = services.UserService.createUser(email);
     [film] = services.CinemaService.createFilm('first glance', 100);
     [cinemaHall] = services.CinemaService.createCinemaHall('first', 5, 5);
     services.MoneyService.createPrice(cinemaHall.id, 100);

@@ -3,15 +3,6 @@
 import ApplicationService from './ApplicationService';
 
 export default class extends ApplicationService {
-  createTicket(email) {
-    const user = new this.models.User(email);
-    const errors = this.validate(user);
-    if (!errors) {
-      this.repositories.User.save(user);
-    }
-    return [user, errors];
-  }
-
   createPrice(cinemaHallId, value) {
     const cinemaHall = this.repositories.CinemaHall.find(cinemaHallId);
     const price = new this.models.Price(cinemaHall, value);
