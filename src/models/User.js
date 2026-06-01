@@ -1,4 +1,4 @@
-// @flow
+//
 
 import uuid from 'uuid-js';
 import ApplicationEntity from './ApplicationEntity';

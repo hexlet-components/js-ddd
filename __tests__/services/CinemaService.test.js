@@ -1,4 +1,4 @@
-// @flow
+//
 
 import cinemaManager from '../../src/index';
 
@@ -21,8 +21,8 @@ describe('CinemaService', () => {
   it('createFilm (errors)', () => {
     const [, errors] = service.createFilm();
     const expected = {
-      duration: ['Duration can\'t be blank'],
-      name: ['Name can\'t be blank'],
+      duration: ["Duration can't be blank"],
+      name: ["Name can't be blank"],
     };
     expect(errors).toMatchObject(expected);
   });
@@ -40,7 +40,7 @@ describe('CinemaService', () => {
   it('createCinemaHall (errors)', () => {
     const [, errors] = service.createCinemaHall();
     const expected = {
-      name: ['Name can\'t be blank'],
+      name: ["Name can't be blank"],
     };
     expect(errors).toMatchObject(expected);
   });

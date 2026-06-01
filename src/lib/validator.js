@@ -1,4 +1,4 @@
-// @flow
+//
 
 import _ from 'lodash';
 import validate from 'validate.js';
@@ -24,7 +24,11 @@ export default ({ repositories }) => {
     const repository = repositories[className];
     const scope = options.scope || [];
     const conditions = options.conditions || {};
-    const params = { [key]: value, ...conditions, ..._.pick(attributes, scope) };
+    const params = {
+      [key]: value,
+      ...conditions,
+      ..._.pick(attributes, scope),
+    };
     const result = repository.findBy(params);
     const isEntity = result instanceof BaseEntity;
     if (result || (isEntity && result.id !== value.id)) {

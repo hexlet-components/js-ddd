@@ -1,23 +1,11 @@
-install: install-deps install-flow-typed
-
-install-deps:
-	yarn
-
-install-flow-typed:
-	npm run flow-typed install
-
-build:
-	rm -rf dist
-	npm run build
+install:
+	npm install
 
 test:
 	npm test
 
-check-types:
-	npm run flow
-
 lint:
-	npm run eslint -- src __tests__
+	npx biome check .
 
 publish:
 	npm publish

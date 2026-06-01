@@ -1,4 +1,4 @@
-// @flow
+//
 
 import cinemaManager from '../../src/index';
 

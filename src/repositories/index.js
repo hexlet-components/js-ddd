@@ -1,12 +1,12 @@
-// @flow
+//
 
-import FilmScreening from './FilmScreeningRepository';
-import Film from './FilmRepository';
-import CinemaHall from './CinemaHallRepository';
-import User from './UserRepository';
-import FilmScreeningTicket from './FilmScreening/TicketRepository';
-import Price from './PriceRepository';
 import CapitalTransaction from './CapitalTransactionRepository';
+import CinemaHall from './CinemaHallRepository';
+import Film from './FilmRepository';
+import FilmScreeningTicket from './FilmScreening/TicketRepository';
+import FilmScreening from './FilmScreeningRepository';
+import Price from './PriceRepository';
+import User from './UserRepository';
 
 export default {
   Price,

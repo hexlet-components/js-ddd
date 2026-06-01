@@ -1,4 +1,4 @@
-// @flow
+//
 
 export default class {
   constructor({ repositories, models, validate }) {

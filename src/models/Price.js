@@ -1,7 +1,7 @@
-// @flow
+//
 
+import * as dataFns from 'date-fns';
 import uuid from 'uuid-js';
-import dataFns from 'date-fns';
 import ApplicationEntity from './ApplicationEntity';
 
 export default class Price extends ApplicationEntity {
@@ -26,7 +26,8 @@ export default class Price extends ApplicationEntity {
   }
 
   calculateFor(time) {
-    return dataFns.isWeekend(time) ?
-      this.value * this.constructor.weekendMultiplier : this.value;
+    return dataFns.isWeekend(time)
+      ? this.value * this.constructor.weekendMultiplier
+      : this.value;
   }
 }
