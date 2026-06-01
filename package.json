@@ -2,15 +2,14 @@
   "name": "hexlet-ddd",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=26.0"
+  },
   "scripts": {
-    "test": "jest",
-    "flow": "flow",
-    "flow-typed": "flow-typed",
-    "gulp": "gulp",
-    "eslint": "eslint",
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublish": "npm run build"
+    "test": "vitest run",
+    "lint": "biome check ."
   },
   "repository": {
     "type": "git",
@@ -23,29 +22,15 @@
   },
   "homepage": "https://github.com/hexlet-boilerplates/javascript-package#readme",
   "dependencies": {
-    "javascript-state-machine": "*",
+    "javascript-state-machine": "^2.4.0",
     "bottlejs": "*",
-    "gulp": "*",
     "lodash": "*",
     "uuid-js": "*",
     "validate.js": "*",
     "date-fns": "*"
   },
   "devDependencies": {
-    "babel-cli": "*",
-    "babel-core": "*",
-    "babel-eslint": "*",
-    "babel-plugin-syntax-flow": "*",
-    "babel-plugin-transform-flow-strip-types": "*",
-    "babel-plugin-transform-runtime": "*",
-    "babel-preset-env": "*",
-    "babel-preset-stage-0": "*",
-    "eslint": "*",
-    "eslint-config-airbnb": "*",
-    "eslint-plugin-flowtype": "*",
-    "eslint-plugin-import": "*",
-    "flow-bin": "^0.314",
-    "flow-typed": "*",
-    "jest": "*"
+    "@biomejs/biome": "^2.2.4",
+    "vitest": "^4.0.15"
   }
 }

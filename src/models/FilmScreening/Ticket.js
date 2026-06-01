@@ -1,22 +1,22 @@
-// @flow
+//
 
-import uuid from 'uuid-js';
 import StateMachine from 'javascript-state-machine';
+import uuid from 'uuid-js';
 import ApplicationEntity from '../ApplicationEntity';
 
-const fsm = () => StateMachine.create({
-  initial: 'active',
-  events: [
-    { name: 'refund', from: 'active', to: 'returned' },
-  ],
-});
+const fsm = () =>
+  StateMachine.create({
+    initial: 'active',
+    events: [{ name: 'refund', from: 'active', to: 'returned' }],
+  });
 
 export default class FilmScreeningTicket extends ApplicationEntity {
   static constraints = {
     fileScreening: {
       presence: true,
       uniqueness: {
-        scope: ['place'], conditions: { fsm: { current: 'active' } },
+        scope: ['place'],
+        conditions: { fsm: { current: 'active' } },
       },
     },
     user: {

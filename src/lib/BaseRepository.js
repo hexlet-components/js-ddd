@@ -1,4 +1,4 @@
-// @flow
+//
 
 import _ from 'lodash';
 
@@ -10,7 +10,7 @@ export default class {
   }
 
   find(id) {
-    const result = this.data.find(entity => entity.id === id);
+    const result = this.data.find((entity) => entity.id === id);
     if (!result) {
       throw new Error('Entity not found');
     }
@@ -30,4 +30,3 @@ export default class {
     this.data.push(entity);
   }
 }
-

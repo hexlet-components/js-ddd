@@ -1,0 +1,27 @@
+name: Node CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+      - name: Use Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '26.x'
+          cache: 'npm'
+      - name: Install
+        run: make install
+      - name: Run linter
+        run: make lint
+      - name: Run tests
+        run: make test
