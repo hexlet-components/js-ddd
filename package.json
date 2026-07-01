@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/hexlet-boilerplates/javascript-package#readme",
   "dependencies": {
-    "javascript-state-machine": "^2.4.0",
+    "javascript-state-machine": "^3.1.0",
     "bottlejs": "*",
     "lodash": "*",
     "uuid-js": "*",
@@ -30,7 +30,7 @@
     "date-fns": "*"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.4",
-    "vitest": "^4.0.15"
+    "@biomejs/biome": "^2.5.2",
+    "vitest": "^4.1.9"
   }
 }
