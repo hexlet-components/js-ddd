@@ -1,5 +1,5 @@
 //
 
-import BaseService from '../lib/BaseService';
+import BaseService from "../lib/BaseService";
 
 export default class extends BaseService {}

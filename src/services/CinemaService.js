@@ -1,6 +1,6 @@
 //
 
-import ApplicationService from './ApplicationService';
+import ApplicationService from "./ApplicationService";
 
 export default class extends ApplicationService {
   createCinemaHall(name, rows, cols) {

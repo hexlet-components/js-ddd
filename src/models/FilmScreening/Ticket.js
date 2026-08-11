@@ -1,13 +1,13 @@
 //
 
-import StateMachine from 'javascript-state-machine';
-import uuid from 'uuid-js';
-import ApplicationEntity from '../ApplicationEntity';
+import StateMachine from "javascript-state-machine";
+import uuid from "uuid-js";
+import ApplicationEntity from "../ApplicationEntity";
 
 const fsm = () =>
   StateMachine.create({
-    initial: 'active',
-    events: [{ name: 'refund', from: 'active', to: 'returned' }],
+    initial: "active",
+    events: [{ name: "refund", from: "active", to: "returned" }],
   });
 
 export default class FilmScreeningTicket extends ApplicationEntity {
@@ -15,8 +15,8 @@ export default class FilmScreeningTicket extends ApplicationEntity {
     fileScreening: {
       presence: true,
       uniqueness: {
-        scope: ['place'],
-        conditions: { fsm: { current: 'active' } },
+        scope: ["place"],
+        conditions: { fsm: { current: "active" } },
       },
     },
     user: {

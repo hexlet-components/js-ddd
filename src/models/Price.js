@@ -1,8 +1,8 @@
 //
 
-import * as dataFns from 'date-fns';
-import uuid from 'uuid-js';
-import ApplicationEntity from './ApplicationEntity';
+import * as dataFns from "date-fns";
+import uuid from "uuid-js";
+import ApplicationEntity from "./ApplicationEntity";
 
 export default class Price extends ApplicationEntity {
   static weekendMultiplier = 1.3;
@@ -26,8 +26,6 @@ export default class Price extends ApplicationEntity {
   }
 
   calculateFor(time) {
-    return dataFns.isWeekend(time)
-      ? this.value * this.constructor.weekendMultiplier
-      : this.value;
+    return dataFns.isWeekend(time) ? this.value * this.constructor.weekendMultiplier : this.value;
   }
 }

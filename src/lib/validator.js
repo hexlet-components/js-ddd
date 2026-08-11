@@ -1,9 +1,9 @@
 //
 
-import _ from 'lodash';
-import validate from 'validate.js';
+import _ from "lodash";
+import validate from "validate.js";
 
-import BaseEntity from './BaseEntity';
+import BaseEntity from "./BaseEntity";
 
 export default ({ repositories }) => {
   const entityValidator = (entity, options = { exception: false }) => {
@@ -32,7 +32,7 @@ export default ({ repositories }) => {
     const result = repository.findBy(params);
     const isEntity = result instanceof BaseEntity;
     if (result || (isEntity && result.id !== value.id)) {
-      return 'already exists';
+      return "already exists";
     }
     return null;
   };

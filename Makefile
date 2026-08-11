@@ -1,11 +1,12 @@
 install:
-	npm install
+	pnpm install
 
 test:
-	npm test
+	pnpm test
 
 lint:
-	npx biome check .
+	pnpm --silent run lint
+	pnpm --silent run format:check
 
 publish:
 	npm publish

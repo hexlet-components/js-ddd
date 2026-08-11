@@ -1,10 +1,10 @@
 //
 
-import uuid from 'uuid-js';
-import ApplicationEntity from './ApplicationEntity';
+import uuid from "uuid-js";
+import ApplicationEntity from "./ApplicationEntity";
 
 export default class CapitalTransaction extends ApplicationEntity {
-  static types = ['income', 'loss'];
+  static types = ["income", "loss"];
 
   static constraints = {
     ticket: {
@@ -28,10 +28,10 @@ export default class CapitalTransaction extends ApplicationEntity {
     this.createdAt = new Date();
 
     switch (type) {
-      case 'income':
+      case "income":
         this.cost = ticket.cost;
         break;
-      case 'loss':
+      case "loss":
         this.cost = -ticket.cost;
         break;
       default:
