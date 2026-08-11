@@ -77,7 +77,13 @@ describe('MoneyService', () => {
   it('buyTicket (errors)', () => {
     const f = () => services.MoneyService.buyTicket();
 
-    expect(f).toThrow();
+    expect(f).toThrow('Entity not found');
+  });
+
+  it('createFilmScreening (errors)', () => {
+    const f = () => services.MoneyService.createFilmScreening();
+
+    expect(f).toThrow('Entity not found');
   });
 
   it('buyTicket with double reservation', () => {

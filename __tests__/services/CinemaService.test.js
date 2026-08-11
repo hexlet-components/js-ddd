@@ -45,8 +45,4 @@ describe('CinemaService', () => {
     expect(errors).toMatchObject(expected);
   });
 
-  it('createFilmScreening (errors)', () => {
-    const f = () => service.createFilmScreening();
-    expect(f).toThrow();
-  });
 });
