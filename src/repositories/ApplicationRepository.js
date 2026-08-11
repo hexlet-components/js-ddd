@@ -1,5 +1,5 @@
 //
 
-import BaseRepository from '../lib/BaseRepository';
+import BaseRepository from "../lib/BaseRepository";
 
 export default class extends BaseRepository {}

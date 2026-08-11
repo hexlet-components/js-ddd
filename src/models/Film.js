@@ -1,7 +1,7 @@
 //
 
-import uuid from 'uuid-js';
-import ApplicationEntity from './ApplicationEntity';
+import uuid from "uuid-js";
+import ApplicationEntity from "./ApplicationEntity";
 
 export default class Film extends ApplicationEntity {
   static constraints = {

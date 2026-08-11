@@ -1,6 +1,6 @@
 //
 
-import ApplicationService from './ApplicationService';
+import ApplicationService from "./ApplicationService";
 
 export default class extends ApplicationService {
   createPrice(cinemaHallId, value) {
@@ -18,12 +18,7 @@ export default class extends ApplicationService {
     const cinemaHall = this.repositories.CinemaHall.find(cinemaHallId);
     const price = this.repositories.Price.findBy({ cinemaHall });
     const cost = price.calculateFor(time);
-    const screening = new this.models.FilmScreening(
-      film,
-      cinemaHall,
-      time,
-      cost,
-    );
+    const screening = new this.models.FilmScreening(film, cinemaHall, time, cost);
 
     const errors = this.validate(screening);
     if (!errors) {
@@ -42,10 +37,7 @@ export default class extends ApplicationService {
       return [ticket, errors];
     }
 
-    const capitalTransaction = new this.models.CapitalTransaction(
-      ticket,
-      'income',
-    );
+    const capitalTransaction = new this.models.CapitalTransaction(ticket, "income");
     this.validate(capitalTransaction, { exception: true });
 
     this.repositories.FilmScreeningTicket.save(ticket);
@@ -56,13 +48,10 @@ export default class extends ApplicationService {
 
   refundTicket(ticketId) {
     const ticket = this.repositories.FilmScreeningTicket.find(ticketId);
-    if (ticket.fsm.is('returned')) {
+    if (ticket.fsm.is("returned")) {
       return false;
     }
-    const capitalTransaction = new this.models.CapitalTransaction(
-      ticket,
-      'loss',
-    );
+    const capitalTransaction = new this.models.CapitalTransaction(ticket, "loss");
     this.validate(capitalTransaction, { exception: true });
     this.repositories.CapitalTransaction.save(capitalTransaction);
     return ticket.fsm.refund();

@@ -1,6 +1,6 @@
 //
 
-import _ from 'lodash';
+import _ from "lodash";
 
 export default class {
   data = [];
@@ -12,7 +12,7 @@ export default class {
   find(id) {
     const result = this.data.find((entity) => entity.id === id);
     if (!result) {
-      throw new Error('Entity not found');
+      throw new Error("Entity not found");
     }
     return result;
   }

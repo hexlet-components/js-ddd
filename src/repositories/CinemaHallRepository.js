@@ -1,5 +1,5 @@
 //
 
-import ApplicationRepository from './ApplicationRepository';
+import ApplicationRepository from "./ApplicationRepository";
 
 export default class extends ApplicationRepository {}
