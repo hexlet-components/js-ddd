@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/hexlet-boilerplates/javascript-package#readme",
   "dependencies": {
-    "javascript-state-machine": "^2.4.0",
+    "javascript-state-machine": "^3.1.0",
     "bottlejs": "*",
     "lodash": "*",
     "uuid-js": "*",

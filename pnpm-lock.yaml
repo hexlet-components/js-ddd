@@ -15,8 +15,8 @@ importers:
         specifier: '*'
         version: 4.4.0
       javascript-state-machine:
-        specifier: ^2.4.0
-        version: 2.4.0
+        specifier: ^3.1.0
+        version: 3.1.0
       lodash:
         specifier: '*'
         version: 4.18.1
@@ -468,8 +468,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  javascript-state-machine@2.4.0:
-    resolution: {integrity: sha512-N5ebPfbgUPBQgu+Q3km/EAxFdG7sS9b+upP3917F/xvH+QES55ba9TfayJJqUQ1OdEuHqwqdadiyqYfalucBvw==}
+  javascript-state-machine@3.1.0:
+    resolution: {integrity: sha512-BwhYxQ1OPenBPXC735RgfB+ZUG8H3kjsx8hrYTgWnoy6TPipEy4fiicyhT2lxRKAXq9pG7CfFT8a2HLr6Hmwxg==}
 
   lightningcss-android-arm64@1.33.0:
     resolution: {integrity: sha512-gEpRTalKdosp4Bb8qWtc2iOgE5SeIHlpS1up9bFq2wAyYhl1UdTObYiHe98zEM9SQvSoqQZ1IQD0JNpg3Ml5pg==}
@@ -976,7 +976,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  javascript-state-machine@2.4.0: {}
+  javascript-state-machine@3.1.0: {}
 
   lightningcss-android-arm64@1.33.0:
     optional: true
