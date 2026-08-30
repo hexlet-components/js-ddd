@@ -91,7 +91,7 @@ describe("MoneyService", () => {
     const place = { row: 5, col: 3 };
     const [ticket] = services.MoneyService.buyTicket(user.id, filmScreening.id, place);
     services.MoneyService.refundTicket(ticket.id);
-    expect(ticket).toMatchObject({ fsm: { current: "returned" } });
+    expect(ticket).toMatchObject({ fsm: { state: "returned" } });
 
     const capitalTransactions = repositories.CapitalTransaction.findAllBy({
       ticket,

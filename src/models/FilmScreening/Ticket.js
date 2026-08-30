@@ -4,10 +4,12 @@ import StateMachine from "javascript-state-machine";
 import uuid from "uuid-js";
 import ApplicationEntity from "../ApplicationEntity";
 
+// javascript-state-machine 3 конструируется через new, а список переходов
+// называется transitions, а не events. Текущее состояние читается как state.
 const fsm = () =>
-  StateMachine.create({
-    initial: "active",
-    events: [{ name: "refund", from: "active", to: "returned" }],
+  new StateMachine({
+    init: "active",
+    transitions: [{ name: "refund", from: "active", to: "returned" }],
   });
 
 export default class FilmScreeningTicket extends ApplicationEntity {
@@ -16,7 +18,7 @@ export default class FilmScreeningTicket extends ApplicationEntity {
       presence: true,
       uniqueness: {
         scope: ["place"],
-        conditions: { fsm: { current: "active" } },
+        conditions: { fsm: { state: "active" } },
       },
     },
     user: {
