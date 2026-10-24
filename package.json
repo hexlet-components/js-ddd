@@ -25,17 +25,17 @@
   },
   "homepage": "https://github.com/hexlet-boilerplates/javascript-package#readme",
   "dependencies": {
+    "bottlejs": "^2.0.1",
+    "date-fns": "^4.4.0",
     "javascript-state-machine": "^3.1.0",
-    "bottlejs": "*",
-    "lodash": "*",
-    "uuid-js": "*",
-    "validate.js": "*",
-    "date-fns": "*"
+    "lodash": "^4.18.1",
+    "uuid-js": "^0.7.5",
+    "validate.js": "^0.13.1"
   },
   "devDependencies": {
-    "oxfmt": "^0.65.0",
-    "oxlint": "^1.80.0",
-    "vitest": "^4.1.11"
+    "oxfmt": "^0.74.0",
+    "oxlint": "^1.89.0",
+    "vitest": "^4.1.12"
   },
   "packageManager": "pnpm@12.6.0"
 }
